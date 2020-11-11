@@ -1,4 +1,4 @@
-require('dotenv').config();
+const config = require('dotenv').config().parsed;
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
@@ -7,6 +7,12 @@ const server = require('http').createServer(app);
 const io = require('socket.io')(server);
 const port = process.env.PORT || 3005; // env 3004
 const router = require('./router/main')(app);
+
+if(process.env.NODE_ENV === 'development') {
+	// development setting
+} else {
+	// local setting
+}
 
 server.listen(port, () => {
   console.log('Server listening at port %d!', port);

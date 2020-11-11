@@ -1,15 +1,19 @@
 <html>
   <head>
-    <title>Client</title>
+    <title><%= title  %> </title>
 		<link rel="icon" href="data:;base64,iVBORw0KGgo=">
 		<link rel="stylesheet" href="/css/style.css">
 		<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
   </head>
 
   <body>
-		<button id="btnEvent">이벤트 호출</button>
-		
+		<ul id="UL">
+		<% for(var i=0; i < length; i++) { %>
+			<li><button id="btnEvent" data-index=<%= i %> >이벤트 호출<%= i+1 %></button></li>
+		<% } %>
+		</ul>
+		<script>let url = '<%=config.URL %>:<%= config.PORT %>';</script>
 		<script src="/socket.io/socket.io.js"></script>
 		<script src="/js/client.js"></script>
-	</body>
+</body>
 </html>

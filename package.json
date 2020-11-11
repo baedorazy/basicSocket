@@ -2,9 +2,9 @@
   "name": "socektConnect",
   "version": "1.0.0",
   "description": "socket sample",
-  "main": "index.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "NODE_ENV=local node server.js",
+    "develop": "NODE_ENV=development node server.js"
   },
   "keywords": [],
   "author": "baedorazy <jnbae@jasongroup.co.kr>",
